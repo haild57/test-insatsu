@@ -1,20 +1,22 @@
 version: 0.2
 
 phases:
+  install:
+    runtime-versions:
+      docker: 19
+
   pre_build:
     commands:
-      # Install and configure the AWS CLI
-      - $(aws ecr get-login --no-include-email --region $AWS_DEFAULT_REGION)
+      - echo Logging in to Amazon ECR...
+      - aws ecr get-login-password --region your-region | docker login --username AWS --password-stdin 091584011942.dkr.ecr.ap-northeast-1.amazonaws.com/hai-handson-cicd-ecs
 
   build:
     commands:
-      # Build the Docker image
+      - echo Building the Docker image...
       - docker build -t sample-apache .
-
-      # Tag the Docker image with the ECR repository URI
       - docker tag sample-apache:latest 091584011942.dkr.ecr.ap-northeast-1.amazonaws.com/hai-handson-cicd-ecs:latest
 
   post_build:
     commands:
-      # Push the Docker image to ECR
+      - echo Pushing the Docker image to ECR...
       - docker push 091584011942.dkr.ecr.ap-northeast-1.amazonaws.com/hai-handson-cicd-ecs:latest
