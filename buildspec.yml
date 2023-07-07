@@ -1,0 +1,23 @@
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+      # Install and configure the AWS CLI
+      - apt-get update && apt-get install -y awscli
+
+  build:
+    commands:
+      # Login to Amazon ECR
+      - $(aws ecr get-login --no-include-email)
+
+      # Build the Docker image
+      - docker build -t sample-apache .
+
+      # Tag the Docker image with the ECR repository URI
+      - docker tag sample-apache:latest 091584011942.dkr.ecr.ap-northeast-1.amazonaws.com/hai-handson-cicd-ecs:latest
+
+  post_build:
+    commands:
+      # Push the Docker image to ECR
+      - docker push 091584011942.dkr.ecr.ap-northeast-1.amazonaws.com/hai-handson-cicd-ecs:latest
