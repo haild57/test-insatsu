@@ -1,11 +1,13 @@
 version: 0.2
 
 phases:
+  pre_build:
+    commands:
+      # Install and configure the AWS CLI
+      - $(aws ecr get-login --no-include-email --region $AWS_DEFAULT_REGION)
+
   build:
     commands:
-      # Login to Amazon ECR
-      - $(aws ecr get-login --no-include-email)
-
       # Build the Docker image
       - docker build -t sample-apache .
 
