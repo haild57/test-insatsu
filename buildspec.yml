@@ -8,15 +8,15 @@ phases:
   pre_build:
     commands:
       - echo Logging in to Amazon ECR...
-      - aws ecr get-login-password --region ap-northeast-1 | docker login --username AWS --password-stdin ${ECR_REPOSITORY_ARN}
+      - aws ecr get-login-password --region "${AWS_DEFAULT_REGION}" | docker login --username AWS --password-stdin "${ECR_REPOSITORY_ARN}"
 
   build:
     commands:
       - echo Building the Docker image...
       - docker build -t sample-apache .
-      - docker tag sample-apache:latest ${ECR_REPOSITORY_ARN}:latest
+      - docker tag sample-apache:latest "${ECR_REPOSITORY_ARN}:latest"
 
   post_build:
     commands:
       - echo Pushing the Docker image to ECR...
-      - docker push ${ECR_REPOSITORY_ARN}:latest
+      - docker push "${ECR_REPOSITORY_ARN}:latest"
