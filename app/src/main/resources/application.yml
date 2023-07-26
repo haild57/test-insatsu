@@ -1,5 +1,5 @@
-page:
-  home: http://localhost:80/
+# page:
+#   home: http://localhost:80/
 server:
   port: 80
 spring:
