@@ -13,6 +13,7 @@ phases:
     commands:
       - echo Building SpringBoot App...
       - cd app 
+      - chmod +x mvnw
       - ./mvnw clean install
       - echo Building the Docker image...
       - docker build -t $REPOSITORY_URI:latest .
