@@ -11,9 +11,13 @@ phases:
 
   build:
     commands:
+      - echo Building SpringBoot App...
+      - cd app 
+      - ./mvnw clean install
       - echo Building the Docker image...
-      - cd app && docker build -t $REPOSITORY_URI:latest . && cd ..
+      - docker build -t $REPOSITORY_URI:latest .
       - docker tag $REPOSITORY_URI:latest $REPOSITORY_URI:$IMAGE_TAG
+      - cd ..
 
   post_build:
     commands:
