@@ -7,7 +7,7 @@
                 <title>Hello, World!</title>
                 <style>
                     body {
-                        background-color: rgb(221, 255, 0);
+                        background-color: red;
                         display: flex;
                         align-items: center;
                         justify-content: center;
@@ -23,7 +23,7 @@
             </head>
 
             <body>
-                <h1 id="hello">Hello CI/CD!</h1>
+                <h1 id="hello">${message}</h1>
             </body>
 
             </html>
