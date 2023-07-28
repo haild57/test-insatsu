@@ -7,6 +7,7 @@ phases:
       - cd app 
       - chmod +x mvnw
       - ./mvnw clean install
+      - ./mvnw spring-boot:run
 
 artifacts:
   files:
