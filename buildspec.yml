@@ -7,11 +7,10 @@ phases:
       - cd app 
       - chmod +x mvnw
       - ./mvnw clean install
-      - ls target
 
 artifacts:
   files:
-    - target/sample-springboot-app-0.0.1.war
+    - app/target/sample-springboot-app-0.0.1.war
     - appspec.yml
     - scripts/**/*
   discard-paths: no
