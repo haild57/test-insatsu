@@ -11,7 +11,7 @@ phases:
 
 artifacts:
   files:
-    - target/sample.war
+    - target/sample-springboot-app-0.0.1.war
     - appspec.yml
     - scripts/**/*
   discard-paths: no
