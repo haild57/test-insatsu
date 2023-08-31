@@ -8,8 +8,7 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>sample-springboot-app</artifactId>
-	<version>0.0.1</version>
+	<artifactId>sample-springboot</artifactId>
 	<packaging>war</packaging>
 	<name>demo</name>
 	<description>Demo project for Spring Boot</description>

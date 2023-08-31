@@ -1,7 +1,7 @@
 version: 0.0
 os: linux
 files:
-  - source: app/target/sample-springboot-app-0.0.1.war
+  - source: app/target/sample-springboot.war
     destination: /usr/share/tomcat/webapps/
 hooks:
   BeforeInstall:
