@@ -1,18 +1,18 @@
 version: 0.2
 
 phases:
+  install:
+    runtime-versions:
+      java: corretto11
   build:
     commands:
-      - echo Building SpringBoot App...
-      - cd app 
-      - chmod +x mvnw
-      - ./mvnw clean install
-      - mv target/sample-springboot-app-0.0.1.war target/abc.war
-
-
+      - mvn clean install
+  post_build:
+    commands:
+      - echo Build completed
 artifacts:
   files:
-    - app/target/abc.war
+    - target/*.war
+    - scripts/*.sh
     - appspec.yml
-    - scripts/**/*
-  discard-paths: no
+  discard-paths: yes

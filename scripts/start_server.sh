@@ -1,3 +1,2 @@
-#!/bin/bash
-sudo systemctl start tomcat.service
-sudo systemctl enable tomcat.service
+#!/usr/bin/env bash
+sudo java -jar /tmp/*.war > /dev/null 2> /dev/null < /dev/null &
