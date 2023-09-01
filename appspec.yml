@@ -4,16 +4,13 @@ os: linux
 files:
   - source: sample-java-app.war
     destination: /usr/share
+file_exists_behavior: OVERWRITE
 
 hooks:
   BeforeInstall:
     - location: server_clear.sh
       timeout: 300
       runas: root
-  # AfterInstall:
-  #   - location: fix_privileges.sh
-  #     timeout: 300
-  #     runas: root
   ApplicationStart:
     - location: server_start.sh
       timeout: 300
