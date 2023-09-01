@@ -2,8 +2,8 @@ version: 0.0
 os: linux
 
 files:
-  - source: /
-    destination: /tmp
+  - source: /*.war
+    destination: /usr/share
 
 hooks:
   BeforeInstall:

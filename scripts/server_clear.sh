@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-sudo rm /tmp/*.war
+sudo rm -f /usr/share/*.war
