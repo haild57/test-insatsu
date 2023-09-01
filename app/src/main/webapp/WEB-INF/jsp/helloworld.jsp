@@ -7,7 +7,7 @@
                 <title>Hello, World!</title>
                 <style>
                     body {
-                        background-color: red;
+                        background-color: blue;
                         display: flex;
                         align-items: center;
                         justify-content: center;
