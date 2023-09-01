@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 
 files:
-  - source: /*.war
+  - source: sample-java-app.war
     destination: /usr/share
 
 hooks:
