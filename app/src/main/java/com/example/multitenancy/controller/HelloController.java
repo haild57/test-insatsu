@@ -10,5 +10,6 @@ public class HelloController {
     public String loginStep1Get(ModelMap modelMap){
         modelMap.addAttribute("message", "Hello CI/CD from EC2 v1!" );         
         return "helloworld";
+        
     }
 }
