@@ -4,6 +4,9 @@ phases:
   build:
     commands:
       - echo Building SpringBoot App...
+      # - java -junit /test
+      # - junit covarage 
+      
       - cd app 
       - chmod +x mvnw
       - ./mvnw clean install
