@@ -6,7 +6,6 @@ phases:
       - echo Building SpringBoot App...
       # - java -junit /test
       # - junit covarage 
-      # them
       - cd app 
       - chmod +x mvnw
       - export MAVEN_OPTS="-Dmaven.wagon.http.retryHandler.count=3 -Dmaven.wagon.httpconnectionManager.ttlSeconds=120"
