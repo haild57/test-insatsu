@@ -9,7 +9,8 @@ phases:
       # them
       - cd app 
       - chmod +x mvnw
-      - ./mvnw clean install
+      - export MAVEN_OPTS="-Dmaven.wagon.http.retryHandler.count=3 -Dmaven.wagon.httpconnectionManager.ttlSeconds=120"
+      - ./mvnw clean install -U || sleep 30 && ./mvnw clean install
       - mv target/*.war target/sample-java-app.war
   post_build:
     commands:
