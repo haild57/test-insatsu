@@ -3,7 +3,6 @@ version: 0.2
 phases:
   build:
     commands:
-      - exit 1
       - echo Building SpringBoot App...
       # - java -junit /test
       # - junit covarage 
