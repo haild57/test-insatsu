@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class HelloController {  
     @GetMapping("/")
     public String loginStep1Get(ModelMap modelMap){
-        modelMap.addAttribute("message", "App5 v5 thay doi lan 5" );         
+        modelMap.addAttribute("message", "test truoc khi deploy" );         
         return "helloworld";
         
     }
